@@ -6,3 +6,5 @@
 /libs/*
 /mysql-5.5.11/*
 /Tomcat-7/*
+/.gitignore
+/README.md

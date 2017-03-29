@@ -5,52 +5,61 @@ import java.util.List;
 
 public class Book {
 
-    private String category;
-    private Title title;
+    private String	 category;
+    private Title	 title;
     private List<String> authors;
-    private int year;
-    private double price;
-    
-    public Book(){
-	
+    private int		 year;
+    private float	 price;
+
+    public Book() {
+
     }
-    
+
     public String getCategory() {
-        return category;
+	return category;
     }
+
     public void setCategory(String category) {
-        this.category = category;
+	this.category = category;
     }
+
     public Title getTitle() {
-        return title;
+	return title;
     }
+
     public void setTitle(Title title) {
-        this.title = title;
+	this.title = title;
     }
+
     public List<String> getAuthors() {
-	if (this.authors == null){
+	if (this.authors == null) {
 	    this.authors = new LinkedList<String>();
 	}
-        return authors;
+	return authors;
     }
+
     public void addAuthor(String author) {
 	getAuthors().add(author);
     }
+
     public int getYear() {
-        return year;
+	return year;
     }
+
     public void setYear(int year) {
-        this.year = year;
+	this.year = year;
     }
+
     public double getPrice() {
-        return price;
+	return price;
     }
-    public void setPrice(double price) {
-        this.price = price;
+
+    public void setPrice(float price) {
+	this.price = price;
     }
-    
+
     @Override
     public String toString() {
-        return getYear() + ": " + getPrice();
+	return getTitle() + " " + getYear();
     }
 }

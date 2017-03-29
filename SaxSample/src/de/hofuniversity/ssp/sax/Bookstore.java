@@ -6,26 +6,25 @@ import java.util.List;
 public class Bookstore {
 
     private List<Book> books;
-    
-    public Bookstore(){
-	
+
+    public Bookstore() {
+
     }
 
     public List<Book> getBooks() {
-	if (this.books == null){
+	if (this.books == null) {
 	    books = new LinkedList<Book>();
 	}
-        return books;
+	return books;
     }
 
     public void addBook(Book book) {
-        getBooks().add(book);
+	getBooks().add(book);
     }
-    
+
     @Override
     public String toString() {
-	// TODO
-        return super.toString();
+	return "Bookstore: " + getBooks().size() + " books";
     }
-    
+
 }
