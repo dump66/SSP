@@ -52,38 +52,40 @@ public class BookstoreParser extends DefaultHandler {
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
 	String text = new String(ch, start, length);
-	switch (state) {
-	case TITLE_STATE:
-	    current.getTitle().setText(text);
-	    break;
-	case YEAR_STATE:
-	    current.setYear(new Integer(text));
-	    break;
-	default:
-	    break;
+	if (!text.trim().isEmpty()) {
+	    switch (state) {
+	    case TITLE_STATE:
+		current.getTitle().setText(text);
+		break;
+	    case YEAR_STATE:
+		current.setYear(new Integer(text));
+		break;
+	    default:
+		break;
+	    }
 	}
     }
 
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
-	if (qName.equalsIgnoreCase("book")){
+	if (qName.equalsIgnoreCase("book")) {
 	    bookStore.addBook(current);
 	    current = null;
 	    state = DEFAULT_STATE;
 	}
     }
-    
+
     public Bookstore parse() throws FileNotFoundException, IOException, SAXException {
 	XMLReader r = XMLReaderFactory.createXMLReader();
 	r.setContentHandler(this);
 	r.parse(new InputSource(new FileReader(in)));
-	
+
 	return bookStore;
     }
 
     public static void main(String[] args) throws FileNotFoundException, IOException, SAXException {
 	BookstoreParser p = new BookstoreParser(new File("books.xml"));
-	for (Book b : p.parse().getBooks()){
+	for (Book b : p.parse().getBooks()) {
 	    System.out.println(b);
 	}
     }
