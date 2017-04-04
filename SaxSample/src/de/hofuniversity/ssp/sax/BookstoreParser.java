@@ -52,18 +52,17 @@ public class BookstoreParser extends DefaultHandler {
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
 	String text = new String(ch, start, length);
-	if (!text.trim().isEmpty()) {
-	    switch (state) {
-	    case TITLE_STATE:
-		current.getTitle().setText(text);
-		break;
-	    case YEAR_STATE:
-		current.setYear(new Integer(text));
-		break;
-	    default:
-		break;
-	    }
+	switch (state) {
+	case TITLE_STATE:
+	    current.getTitle().setText(text);
+	    break;
+	case YEAR_STATE:
+	    current.setYear(new Integer(text));
+	    break;
+	default:
+	    break;
 	}
+	state = DEFAULT_STATE;
     }
 
     @Override
