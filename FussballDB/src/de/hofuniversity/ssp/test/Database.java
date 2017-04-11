@@ -6,7 +6,12 @@ import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
+
+import de.hofuniversity.ssp.jdom.TeamsParser;
+import de.hofuniversity.ssp.teams.Team;
 
 public class Database {
 
@@ -40,9 +45,22 @@ public class Database {
 	br.close();
 	return sql;
     }
+    
+    private void importTeam(List<Team> teams) throws Exception{
+	executeStatement(getDDL("teams.sql"));
+	Statement stmt = getConnection().createStatement();
+	for (Team t: teams){
+	    String sql = "insert into t_teams (" + t.getTeamID() + ",'" + t.getTeamName() + "','" + t.getTeamIconURL() + "'";
+	    System.out.println(sql);
+	    stmt.execute(sql);
+	}
+	stmt.close();
+    }
 
     public static void main(String[] args) throws Exception {
 	Database db = new Database();
-	db.executeStatement(db.getDDL("team.sql"));
+	TeamsParser parser = new TeamsParser("teams.xml");
+	parser.parse();
+	db.importTeam(parser.getTeamList());
     }
 }

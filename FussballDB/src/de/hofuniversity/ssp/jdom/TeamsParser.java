@@ -42,12 +42,4 @@ public class TeamsParser {
     public List<Team> getTeamList() {
         return teamList;
     }
-
-    public static void main(String[] args) throws JDOMException, IOException {
-	TeamsParser tParser = new TeamsParser("teams.xml");
-	tParser.parse();
-	for (Team t : tParser.getTeamList()){
-	    System.out.println(t.toString());
-	}
-    }
 }
