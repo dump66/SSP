@@ -9,8 +9,9 @@ import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 
-import de.hofuniversity.ssp.teams.Player;
-import de.hofuniversity.ssp.teams.Team;
+import de.hofuniversity.ssp.data.Player;
+import de.hofuniversity.ssp.data.Stadium;
+import de.hofuniversity.ssp.data.Team;
 
 public class TeamsParser {
     
@@ -27,10 +28,10 @@ public class TeamsParser {
 	List<Element> teams = root.getChildren();
 	for (Element e : teams){
 	    Team currentTeam = new Team();
-	    currentTeam.setStadion(e.getChildText("stadion"));
-	    currentTeam.setTeamIconURL(e.getChildText("teamIconURL"));
-	    currentTeam.setTeamID(Integer.parseInt(e.getChildText("teamID")));
-	    currentTeam.setTeamName(e.getChildText("teamName"));
+	    currentTeam.setStadium(new Stadium(e.getChildText("stadion")));
+	    currentTeam.setIcon(e.getChildText("teamIconURL"));
+	    currentTeam.setId(Integer.parseInt(e.getChildText("teamID")));
+	    currentTeam.setName(e.getChildText("teamName"));
 	    for(Element player : e.getChildren("player")){
 		currentTeam.addPlayer(new Player(player.getText()));
 	    }

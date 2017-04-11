@@ -1,4 +1,4 @@
-package de.hofuniversity.ssp.matches;
+package de.hofuniversity.ssp.data;
 
 public class Goal {
 

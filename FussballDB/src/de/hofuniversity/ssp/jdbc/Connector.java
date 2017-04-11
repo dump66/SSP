@@ -1,4 +1,4 @@
-package de.hofuniversity.ssp.test;
+package de.hofuniversity.ssp.jdbc;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -7,15 +7,15 @@ import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
 import de.hofuniversity.ssp.data.Team;
 import de.hofuniversity.ssp.jdom.TeamsParser;
+import de.hofuniversity.ssp.test.Database;
 
-public class Database {
-
+public class Connector {
+    
     public Connection getConnection() throws Exception {
 	Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver").newInstance();
 	DriverManager.registerDriver(driver);
@@ -51,7 +51,7 @@ public class Database {
 	executeStatement(getDDL("SQL/team.sql"));
 	Statement stmt = getConnection().createStatement();
 	for (Team t: teams){
-	    String sql = "insert into t_team values(" + t.getId() + ",'" + t.getName() + "','" + t.getIcon() + "');";
+	    String sql = "insert into verein(id, name, logo) values(" + t.getId() + ",'" + t.getName() + "','" + t.getIcon() + "');";
 	    System.out.println(sql);
 	    stmt.execute(sql);
 	}
@@ -59,9 +59,10 @@ public class Database {
     }
 
     public static void main(String[] args) throws Exception {
-	Database db = new Database();
+	Connector con = new Connector();
 	TeamsParser parser = new TeamsParser("XML/teams.xml");
 	parser.parse();
-	db.importTeam(parser.getTeamList());
+	con.importTeam(parser.getTeamList());
     }
+
 }

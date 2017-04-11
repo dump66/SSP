@@ -1,4 +1,4 @@
-package de.hofuniversity.ssp.matches;
+package de.hofuniversity.ssp.data;
 
 import java.util.GregorianCalendar;
 import java.util.LinkedList;
@@ -22,7 +22,6 @@ public class Matchdata {
     private boolean	      matchIsFinished;
     private List<MatchResult> matchResults;
     private List<Goal>	      goals;
-    private Location	      location;
     private int		      numberOfViewers;
 
     public Matchdata(){
@@ -163,14 +162,6 @@ public class Matchdata {
         getGoals().add(goal);
     }
 
-    public Location getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location location) {
-        this.location = location;
-    }
-
     public int getNumberOfViewers() {
         return numberOfViewers;
     }
@@ -185,7 +176,7 @@ public class Matchdata {
 		+ groupOrderID + ", groupName=" + groupName + ", leagueID=" + leagueID + ", leagueName=" + leagueName + ", leageSaison="
 		+ leageSaison + ", leagueShortcut=" + leagueShortcut + ", idTeam1=" + idTeam1 + ", idTeam2=" + idTeam2 + ", pointsTeam1="
 		+ pointsTeam1 + ", pointsTeam2=" + pointsTeam2 + ", matchIsFinished=" + matchIsFinished + ", matchResult=" + matchResults
-		+ ", goals=" + goals + ", location=" + location + ", numberOfViewers=" + numberOfViewers + "]";
+		+ ", goals=" + goals + ", numberOfViewers=" + numberOfViewers + "]";
     }
     
 }
