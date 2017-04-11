@@ -47,10 +47,10 @@ public class Database {
     }
     
     private void importTeam(List<Team> teams) throws Exception{
-	executeStatement(getDDL("teams.sql"));
+	executeStatement(getDDL("team.sql"));
 	Statement stmt = getConnection().createStatement();
 	for (Team t: teams){
-	    String sql = "insert into t_teams (" + t.getTeamID() + ",'" + t.getTeamName() + "','" + t.getTeamIconURL() + "'";
+	    String sql = "insert into t_team values(" + t.getTeamID() + ",'" + t.getTeamName() + "','" + t.getTeamIconURL() + "');";
 	    System.out.println(sql);
 	    stmt.execute(sql);
 	}
