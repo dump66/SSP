@@ -11,7 +11,7 @@ public class Team {
     private String	 teamName;
     private URL		 teamIconURL;
     private String	 stadion;
-    private List<String> players;
+    private List<Player> players;
 
     public Team() {
 
@@ -53,14 +53,14 @@ public class Team {
 	this.stadion = stadion;
     }
 
-    public List<String> getPlayers() {
+    public List<Player> getPlayers() {
 	if (this.players == null) {
-	    this.players = new LinkedList<String>();
+	    this.players = new LinkedList<Player>();
 	}
 	return players;
     }
 
-    public void addPlayer(String player) {
+    public void addPlayer(Player player) {
 	getPlayers().add(player);
     }
 

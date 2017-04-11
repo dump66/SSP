@@ -9,6 +9,7 @@ import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 
+import de.hofuniversity.ssp.teams.Player;
 import de.hofuniversity.ssp.teams.Team;
 
 public class TeamsParser {
@@ -31,7 +32,7 @@ public class TeamsParser {
 	    currentTeam.setTeamID(Integer.parseInt(e.getChildText("teamID")));
 	    currentTeam.setTeamName(e.getChildText("teamName"));
 	    for(Element player : e.getChildren("player")){
-		currentTeam.addPlayer(player.getText());
+		currentTeam.addPlayer(new Player(player.getText()));
 	    }
 	    teamList.add(currentTeam);
 	}
