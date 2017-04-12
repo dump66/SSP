@@ -14,7 +14,7 @@ public class Team {
     private List<Player> players;
 
     public Team() {
-	
+
     }
 
     public int getId() {
@@ -57,11 +57,11 @@ public class Team {
     }
 
     public Stadium getStadium() {
-        return stadium;
+	return stadium;
     }
 
     public void setStadium(Stadium stadium) {
-        this.stadium = stadium;
+	this.stadium = stadium;
     }
 
     @Override
