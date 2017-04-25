@@ -51,7 +51,7 @@ public class Connector {
 	executeStatement(getDDL("SQL/team.sql"));
 	Statement stmt = getConnection().createStatement();
 	for (Team t: teams){
-	    String sql = "insert into verein(id, name, logo) values(" + t.getId() + ",'" + t.getName() + "','" + t.getIcon() + "');";
+	    String sql = "insert into verein(i_id, v_name, v_logo) values(" + t.getId() + ",'" + t.getName() + "','" + t.getIcon() + "');";
 	    System.out.println(sql);
 	    stmt.execute(sql);
 	}

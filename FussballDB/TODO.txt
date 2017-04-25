@@ -1,1 +1,2 @@
 1. Stadion aus XML lesen, in Stadion Tabelle speichern, ID holen und in Team Klasse/Tabelle speichern.
+2. String Format für SQL Befehle

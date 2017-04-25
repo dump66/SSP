@@ -1,12 +1,63 @@
-DROP TABLE IF EXISTS `fussballdb`.`verein`;
+DROP database IF EXISTS fussballdb;
+CREATE database fussballdb;
+
 CREATE TABLE `fussballdb`.`verein` (
   `i_id` INTEGER UNSIGNED NOT NULL,
-  `v_name` VARCHAR(45) NOT NULL default '',
-  `d_gruendung` DATE NOT NULL default '0000-00-00',
-  `v_trainer` VARCHAR(45) NOT NULL default '',
-  `v_praesident` VARCHAR(45) NOT NULL default '',
-  `v_ort` VARCHAR(45) NOT NULL default '',
-  `v_logo` VARCHAR(200) NOT NULL default '',
-  `i_stadion` INTEGER NOT NULL default -1,
-  PRIMARY KEY (`id`)
-)
+  `v_name` VARCHAR(200),
+  `d_gruendung` DATE ,
+  `v_trainer` VARCHAR(200),
+  `v_praesident` VARCHAR(200),
+  `v_ort` VARCHAR(200),
+  `v_logo` VARCHAR(255),
+  `fk_stadion` INTEGER NOT NULL default -1,
+  PRIMARY KEY (`i_id`)
+);
+
+CREATE TABLE `fussballdb`.`spiel` (
+  `i_id` INTEGER UNSIGNED NOT NULL,
+  `i_saison` INTEGER UNSIGNED,
+  `d_datum` DATE,
+  `i_zuschauer` INTEGER UNSIGNED,
+  `v_schiri` VARCHAR(200),
+  `fk_stadion` INTEGER NOT NULL DEFAULT '-1',
+  `v_endergebnis` VARCHAR(5),
+  `v_hzergebnis` VARCHAR(5),
+  `i_punkteHeim` INTEGER,
+  `i_punkteGast` INTEGER,
+  `fk_heimVerein` INTEGER NOT NULL DEFAULT '-1',
+  `fk_gastVerein` INTEGER NOT NULL DEFAULT '-1',
+  PRIMARY KEY (`i_id`)
+);
+
+CREATE TABLE `fussballdb`.`spieler` (
+  `i_id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `v_name` VARCHAR(200),
+  `v_position` VARCHAR(200),
+  `d_geburtsdatum` DATE,
+  `v_nation` VARCHAR(200),
+  `v_bild` VARCHAR(255),
+  `fk_verein` INTEGER NOT NULL DEFAULT '-1',
+  PRIMARY KEY (`i_id`)
+);
+
+CREATE TABLE `fussballdb`.`stadion` (
+  `i_id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `v_name` VARCHAR(200),
+  `v_gps` VARCHAR(200),
+  `v_adresse` VARCHAR(200),
+  `v_bild` VARCHAR(255),
+  `i_kapazitaet` INTEGER UNSIGNED,
+  PRIMARY KEY (`i_id`)
+);
+
+CREATE TABLE `fussballdb`.`tor` (
+  `i_id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `i_toreHeim` INTEGER UNSIGNED NOT NULL,
+  `i_toreGast` INTEGER UNSIGNED NOT NULL,
+  `i_minute` INTEGER UNSIGNED NOT NULL,
+  `fk_spieler` INTEGER NOT NULL default -1,
+  `fk_spiel` INTEGER NOT NULL default -1,
+  PRIMARY KEY (`i_id`)
+);
+
+
