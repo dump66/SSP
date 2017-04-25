@@ -30,7 +30,7 @@ CREATE TABLE `fussballdb`.`spiel` (
 );
 
 CREATE TABLE `fussballdb`.`spieler` (
-  `i_id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `i_id` INTEGER UNSIGNED NOT NULL,
   `v_name` VARCHAR(200),
   `v_position` VARCHAR(200),
   `d_geburtsdatum` DATE,
@@ -41,7 +41,7 @@ CREATE TABLE `fussballdb`.`spieler` (
 );
 
 CREATE TABLE `fussballdb`.`stadion` (
-  `i_id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `i_id` INTEGER UNSIGNED NOT NULL,
   `v_name` VARCHAR(200),
   `v_gps` VARCHAR(200),
   `v_adresse` VARCHAR(200),

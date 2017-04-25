@@ -2,7 +2,7 @@ package de.hofuniversity.ssp.data;
 
 public class Stadium {
 
-    private String id;
+    private int id;
     private String name;
     private String gps;
     private String address;
@@ -13,11 +13,11 @@ public class Stadium {
 
     }
 
-    public String getId() {
+    public int getId() {
 	return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
 	this.id = id;
     }
 
