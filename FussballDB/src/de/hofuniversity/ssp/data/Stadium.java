@@ -1,67 +1,70 @@
 package de.hofuniversity.ssp.data;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-
 public class Stadium {
 
+    private String id;
     private String name;
     private String gps;
     private String address;
-    private URL picture;
-    private int capacity;
-    
-    public Stadium(){
-	
+    private String picture;
+    private int	   capacity;
+
+    public Stadium() {
+
     }
-    
-    public Stadium(String name){
-	this.name = name;
+
+    public String getId() {
+	return id;
+    }
+
+    public void setId(String id) {
+	this.id = id;
     }
 
     public String getName() {
-        return name;
+	return name;
     }
 
     public void setName(String name) {
-        this.name = name;
+	this.name = name;
     }
 
     public String getGps() {
-        return gps;
+	return gps;
     }
 
     public void setGps(String gps) {
-        this.gps = gps;
+	this.gps = gps;
     }
 
     public String getAddress() {
-        return address;
+	return address;
     }
 
     public void setAddress(String address) {
-        this.address = address;
+	this.address = address;
     }
 
-    public URL getPicture() {
-        return picture;
+    public String getPicture() {
+	return picture;
     }
 
     public void setPicture(String picture) {
-        try {
-	    this.picture = new URL(picture);
-	} catch (MalformedURLException e) {
-	    System.out.println("Warning: Could not create URL. Check XML File. URL-String:" + System.lineSeparator() + picture);
-	}
+	this.picture = picture;
     }
 
     public int getCapacity() {
-        return capacity;
+	return capacity;
     }
 
     public void setCapacity(int capacity) {
-        this.capacity = capacity;
+	this.capacity = capacity;
     }
-    
-    
+
+    @Override
+    public String toString() {
+	return "Stadium [id=" + id + ", name=" + name + ", gps=" + gps + ", address=" + address + ", picture=" + picture + ", capacity="
+		+ capacity + "]";
+    }
+
 }

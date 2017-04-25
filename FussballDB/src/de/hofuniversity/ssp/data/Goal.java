@@ -2,106 +2,69 @@ package de.hofuniversity.ssp.data;
 
 public class Goal {
 
-    private int goalID;
-    private int goalMatchID;
-    private int goalScoreTeam1;
-    private int goalScoreTeam2;
-    private int goalMatchMinute;
-    private int goalGetterID;
-    private String goalGetterName;
-    private boolean goalPenalty;
-    private boolean goalOwnGoal;
-    private boolean goalOvertime;
-    
-    public Goal(){
+    private int	   id;
+    private int	   goalsHome;
+    private int	   goalsGuest;
+    private int	   minute;
+    private Player player;
+    private Match  match;
+
+    public Goal() {
 	
     }
 
-    public int getGoalID() {
-        return goalID;
+    public int getId() {
+        return id;
     }
 
-    public void setGoalID(int goalID) {
-        this.goalID = goalID;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public int getGoalMatchID() {
-        return goalMatchID;
+    public int getGoalsHome() {
+        return goalsHome;
     }
 
-    public void setGoalMatchID(int goalMatchID) {
-        this.goalMatchID = goalMatchID;
+    public void setGoalsHome(int goalsHome) {
+        this.goalsHome = goalsHome;
     }
 
-    public int getGoalScoreTeam1() {
-        return goalScoreTeam1;
+    public int getGoalsGuest() {
+        return goalsGuest;
     }
 
-    public void setGoalScoreTeam1(int goalScoreTeam1) {
-        this.goalScoreTeam1 = goalScoreTeam1;
+    public void setGoalsGuest(int goalsGuest) {
+        this.goalsGuest = goalsGuest;
     }
 
-    public int getGoalScoreTeam2() {
-        return goalScoreTeam2;
+    public int getMinute() {
+        return minute;
     }
 
-    public void setGoalScoreTeam2(int goalScoreTeam2) {
-        this.goalScoreTeam2 = goalScoreTeam2;
+    public void setMinute(int minute) {
+        this.minute = minute;
     }
 
-    public int getGoalMatchMinute() {
-        return goalMatchMinute;
+    public Player getPlayer() {
+        return player;
     }
 
-    public void setGoalMatchMinute(int goalMatchMinute) {
-        this.goalMatchMinute = goalMatchMinute;
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 
-    public int getGoalGetterID() {
-        return goalGetterID;
+    public Match getMatch() {
+        return match;
     }
 
-    public void setGoalGetterID(int goalGetterID) {
-        this.goalGetterID = goalGetterID;
-    }
-
-    public String getGoalGetterName() {
-        return goalGetterName;
-    }
-
-    public void setGoalGetterName(String goalGetterName) {
-        this.goalGetterName = goalGetterName;
-    }
-
-    public boolean isGoalPenalty() {
-        return goalPenalty;
-    }
-
-    public void setGoalPenalty(boolean goalPenalty) {
-        this.goalPenalty = goalPenalty;
-    }
-
-    public boolean isGoalOwnGoal() {
-        return goalOwnGoal;
-    }
-
-    public void setGoalOwnGoal(boolean goalOwnGoal) {
-        this.goalOwnGoal = goalOwnGoal;
-    }
-
-    public boolean isGoalOvertime() {
-        return goalOvertime;
-    }
-
-    public void setGoalOvertime(boolean goalOvertime) {
-        this.goalOvertime = goalOvertime;
+    public void setMatch(Match match) {
+        this.match = match;
     }
 
     @Override
     public String toString() {
-	return "Goal [goalID=" + goalID + ", goalMatchID=" + goalMatchID + ", goalScoreTeam1=" + goalScoreTeam1 + ", goalScoreTeam2="
-		+ goalScoreTeam2 + ", goalMatchMinute=" + goalMatchMinute + ", goalGetterID=" + goalGetterID + ", goalGetterName="
-		+ goalGetterName + ", goalPenalty=" + goalPenalty + ", goalOwnGoal=" + goalOwnGoal + ", goalOvertime=" + goalOvertime + "]";
+	return "Goal [id=" + id + ", goalsHome=" + goalsHome + ", goalsGuest=" + goalsGuest + ", minute=" + minute + ", player=" + player
+		+ ", match=" + match + "]";
     }
     
     
