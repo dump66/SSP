@@ -4,117 +4,117 @@ import java.sql.Time;
 
 public class Match {
 
-    private int id;
-    private int season;
-    private Time date;
-    private int visitors;
-    private String referee;
+    private int	    id;
+    private int	    season;
+    private Time    date;
+    private int	    visitors;
+    private String  referee;
     private Stadium stadium;
-    private String finalScore;
-    private String htScore;
-    private int ptsHome;
-    private int ptsGuest;
-    private Team homeTeam;
-    private Team guestTeam;
-    
+    private String  finalScore;
+    private String  htScore;
+    private int	    ptsHome;
+    private int	    ptsGuest;
+    private Team    homeTeam;
+    private Team    guestTeam;
+
     public Match() {
 
     }
 
     public int getId() {
-        return id;
+	return id;
     }
 
     public void setId(int id) {
-        this.id = id;
+	this.id = id;
     }
 
     public int getSeason() {
-        return season;
+	return season;
     }
 
     public void setSeason(int season) {
-        this.season = season;
+	this.season = season;
     }
 
     public Time getDate() {
-        return date;
+	return date;
     }
 
     public void setDate(Time date) {
-        this.date = date;
+	this.date = date;
     }
 
     public int getVisitors() {
-        return visitors;
+	return visitors;
     }
 
     public void setVisitors(int visitors) {
-        this.visitors = visitors;
+	this.visitors = visitors;
     }
 
     public String getReferee() {
-        return referee;
+	return referee;
     }
 
     public void setReferee(String referee) {
-        this.referee = referee;
+	this.referee = referee;
     }
 
     public Stadium getStadium() {
-        return stadium;
+	return stadium;
     }
 
     public void setStadium(Stadium stadium) {
-        this.stadium = stadium;
+	this.stadium = stadium;
     }
 
     public String getFinalScore() {
-        return finalScore;
+	return finalScore;
     }
 
     public void setFinalScore(String finalScore) {
-        this.finalScore = finalScore;
+	this.finalScore = finalScore;
     }
 
     public String getHtScore() {
-        return htScore;
+	return htScore;
     }
 
     public void setHtScore(String htScore) {
-        this.htScore = htScore;
+	this.htScore = htScore;
     }
 
     public int getPtsHome() {
-        return ptsHome;
+	return ptsHome;
     }
 
     public void setPtsHome(int ptsHome) {
-        this.ptsHome = ptsHome;
+	this.ptsHome = ptsHome;
     }
 
     public int getPtsGuest() {
-        return ptsGuest;
+	return ptsGuest;
     }
 
     public void setPtsGuest(int ptsGuest) {
-        this.ptsGuest = ptsGuest;
+	this.ptsGuest = ptsGuest;
     }
 
     public Team getHomeTeam() {
-        return homeTeam;
+	return homeTeam;
     }
 
     public void setHomeTeam(Team homeTeam) {
-        this.homeTeam = homeTeam;
+	this.homeTeam = homeTeam;
     }
 
     public Team getGuestTeam() {
-        return guestTeam;
+	return guestTeam;
     }
 
     public void setGuestTeam(Team guestTeam) {
-        this.guestTeam = guestTeam;
+	this.guestTeam = guestTeam;
     }
 
     @Override
@@ -123,6 +123,5 @@ public class Match {
 		+ ", stadium=" + stadium + ", finalScore=" + finalScore + ", htScore=" + htScore + ", ptsHome=" + ptsHome + ", ptsGuest="
 		+ ptsGuest + ", homeTeam=" + homeTeam + ", guestTeam=" + guestTeam + "]";
     }
-    
-    
+
 }

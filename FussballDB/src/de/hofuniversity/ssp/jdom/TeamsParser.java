@@ -14,16 +14,16 @@ import de.hofuniversity.ssp.data.Stadium;
 import de.hofuniversity.ssp.data.Team;
 
 public class TeamsParser {
-    
-    private Document doc;
-    private List<Team> teamList;
+
+    private Document	  doc;
+    private List<Team>	  teamList;
     private List<Stadium> stadiumList;
-    private List<Player> playerList;
-    
-    private static int stadiumID = 1;
-    private static int playerID = 1;
-    
-    public TeamsParser(String filename) throws JDOMException, IOException{
+    private List<Player>  playerList;
+
+    private static int	  stadiumID = 1;
+    private static int	  playerID  = 1;
+
+    public TeamsParser(String filename) throws JDOMException, IOException {
 	doc = new SAXBuilder().build(filename);
 	this.teamList = new LinkedList<Team>();
 	this.stadiumList = new LinkedList<Stadium>();
@@ -33,7 +33,7 @@ public class TeamsParser {
     public void parse() throws JDOMException, IOException {
 	Element root = doc.getRootElement();
 	List<Element> teams = root.getChildren();
-	for (Element e : teams){
+	for (Element e : teams) {
 	    Team currentTeam = new Team();
 	    Stadium s = new Stadium();
 	    s.setId(getStadiumID());
@@ -43,7 +43,7 @@ public class TeamsParser {
 	    currentTeam.setIcon(e.getChildText("teamIconURL"));
 	    currentTeam.setId(Integer.parseInt(e.getChildText("teamID")));
 	    currentTeam.setName(e.getChildText("teamName"));
-	    for(Element player : e.getChildren("player")){
+	    for (Element player : e.getChildren("player")) {
 		Player p = new Player();
 		p.setId(getPlayerID());
 		p.setName(player.getText());
@@ -52,26 +52,26 @@ public class TeamsParser {
 	    }
 	    teamList.add(currentTeam);
 	}
-	
+
     }
-    
+
     public List<Team> getTeamList() {
-        return teamList;
+	return teamList;
     }
 
     public List<Stadium> getStadiumList() {
-        return stadiumList;
+	return stadiumList;
     }
 
     public List<Player> getPlayerList() {
-        return playerList;
+	return playerList;
     }
-    
-    private int getStadiumID(){
+
+    private int getStadiumID() {
 	return this.stadiumID++;
     }
-    
-    private int getPlayerID(){
+
+    private int getPlayerID() {
 	return this.playerID++;
     }
 }

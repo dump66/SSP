@@ -2,7 +2,7 @@ package de.hofuniversity.ssp.data;
 
 public class Stadium {
 
-    private int id;
+    private int	   id;
     private String name;
     private String gps;
     private String address;

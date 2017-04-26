@@ -10,55 +10,55 @@ public class Goal {
     private Match  match;
 
     public Goal() {
-	
+
     }
 
     public int getId() {
-        return id;
+	return id;
     }
 
     public void setId(int id) {
-        this.id = id;
+	this.id = id;
     }
 
     public int getGoalsHome() {
-        return goalsHome;
+	return goalsHome;
     }
 
     public void setGoalsHome(int goalsHome) {
-        this.goalsHome = goalsHome;
+	this.goalsHome = goalsHome;
     }
 
     public int getGoalsGuest() {
-        return goalsGuest;
+	return goalsGuest;
     }
 
     public void setGoalsGuest(int goalsGuest) {
-        this.goalsGuest = goalsGuest;
+	this.goalsGuest = goalsGuest;
     }
 
     public int getMinute() {
-        return minute;
+	return minute;
     }
 
     public void setMinute(int minute) {
-        this.minute = minute;
+	this.minute = minute;
     }
 
     public Player getPlayer() {
-        return player;
+	return player;
     }
 
     public void setPlayer(Player player) {
-        this.player = player;
+	this.player = player;
     }
 
     public Match getMatch() {
-        return match;
+	return match;
     }
 
     public void setMatch(Match match) {
-        this.match = match;
+	this.match = match;
     }
 
     @Override
@@ -66,6 +66,5 @@ public class Goal {
 	return "Goal [id=" + id + ", goalsHome=" + goalsHome + ", goalsGuest=" + goalsGuest + ", minute=" + minute + ", player=" + player
 		+ ", match=" + match + "]";
     }
-    
-    
+
 }

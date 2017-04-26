@@ -2,7 +2,7 @@ DROP database IF EXISTS fussballdb;
 CREATE database fussballdb;
 
 CREATE TABLE `fussballdb`.`verein` (
-  `i_id` INTEGER UNSIGNED NOT NULL,
+  `i_id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   `v_name` VARCHAR(200),
   `d_gruendung` DATE ,
   `v_trainer` VARCHAR(200),
@@ -14,7 +14,7 @@ CREATE TABLE `fussballdb`.`verein` (
 );
 
 CREATE TABLE `fussballdb`.`spiel` (
-  `i_id` INTEGER UNSIGNED NOT NULL,
+  `i_id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   `i_saison` INTEGER UNSIGNED,
   `d_datum` DATE,
   `i_zuschauer` INTEGER UNSIGNED,
@@ -30,7 +30,7 @@ CREATE TABLE `fussballdb`.`spiel` (
 );
 
 CREATE TABLE `fussballdb`.`spieler` (
-  `i_id` INTEGER UNSIGNED NOT NULL,
+  `i_id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   `v_name` VARCHAR(200),
   `v_position` VARCHAR(200),
   `d_geburtsdatum` DATE,
@@ -41,7 +41,7 @@ CREATE TABLE `fussballdb`.`spieler` (
 );
 
 CREATE TABLE `fussballdb`.`stadion` (
-  `i_id` INTEGER UNSIGNED NOT NULL,
+  `i_id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   `v_name` VARCHAR(200),
   `v_gps` VARCHAR(200),
   `v_adresse` VARCHAR(200),
