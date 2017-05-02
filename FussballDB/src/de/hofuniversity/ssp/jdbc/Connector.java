@@ -43,7 +43,7 @@ public class Connector {
     }
 
     private String getDDL(String name) throws IOException {
-	BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(name)));
+	BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream(name)));
 	String line, sql = "";
 	while ((line = br.readLine()) != null) {
 	    sql += line;
@@ -98,10 +98,10 @@ public class Connector {
 
     public static void main(String[] args) throws Exception {
 	Connector con = new Connector();
-	con.executeStatement(con.getDDL("SQL/team.sql"));
-	TeamsParser tParser = new TeamsParser("XML/teams.xml");
+	con.executeStatement(con.getDDL("/team.sql"));
+	TeamsParser tParser = new TeamsParser("/teams.xml");
 	tParser.parse();
-	MatchParser mParser = new MatchParser("XML/matches.xml");
+	MatchParser mParser = new MatchParser("/matches.xml");
 	mParser.parse();
 	con.importElements(tParser.getTeamList());
 	con.importElements(tParser.getPlayerList());

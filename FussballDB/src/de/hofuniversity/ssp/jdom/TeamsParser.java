@@ -21,7 +21,7 @@ public class TeamsParser {
     private static List<Player>	 playerList;
 
     public TeamsParser(String filename) throws JDOMException, IOException {
-	doc = new SAXBuilder().build(filename);
+	doc = new SAXBuilder().build(getClass().getResourceAsStream(filename));
 	this.teamList = new LinkedList<Team>();
 	this.stadiumList = new LinkedList<Stadium>();
 	this.playerList = new LinkedList<Player>();

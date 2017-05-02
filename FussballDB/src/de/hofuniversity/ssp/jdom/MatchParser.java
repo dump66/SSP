@@ -21,7 +21,7 @@ public class MatchParser {
     private List<Match>	matchList;
 
     public MatchParser(String filename) throws JDOMException, IOException {
-	doc = new SAXBuilder().build(filename);
+	doc = new SAXBuilder().build(getClass().getResourceAsStream(filename));
 	this.goalList = new LinkedList<Goal>();
 	this.matchList = new LinkedList<Match>();
     }
