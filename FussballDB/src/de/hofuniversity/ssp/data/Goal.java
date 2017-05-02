@@ -3,8 +3,8 @@ package de.hofuniversity.ssp.data;
 public class Goal {
 
     private int	   id;
-    private int	   goalsHome;
-    private int	   goalsGuest;
+    private int	   goalHome;
+    private int	   goalGuest;
     private int	   minute;
     private Player player;
     private Match  match;
@@ -21,20 +21,20 @@ public class Goal {
 	this.id = id;
     }
 
-    public int getGoalsHome() {
-	return goalsHome;
+    public int getGoalHome() {
+	return goalHome;
     }
 
-    public void setGoalsHome(int goalsHome) {
-	this.goalsHome = goalsHome;
+    public void setGoalHome(int goalHome) {
+	this.goalHome = goalHome;
     }
 
-    public int getGoalsGuest() {
-	return goalsGuest;
+    public int getGoalGuest() {
+	return goalGuest;
     }
 
-    public void setGoalsGuest(int goalsGuest) {
-	this.goalsGuest = goalsGuest;
+    public void setGoalGuest(int goalGuest) {
+	this.goalGuest = goalGuest;
     }
 
     public int getMinute() {
@@ -63,7 +63,7 @@ public class Goal {
 
     @Override
     public String toString() {
-	return "Goal [id=" + id + ", goalsHome=" + goalsHome + ", goalsGuest=" + goalsGuest + ", minute=" + minute + ", player=" + player
+	return "Goal [id=" + id + ", goalsHome=" + goalHome + ", goalsGuest=" + goalGuest + ", minute=" + minute + ", player=" + player
 		+ ", match=" + match + "]";
     }
 

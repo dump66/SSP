@@ -1,27 +1,23 @@
 package de.hofuniversity.ssp.data;
 
-import java.sql.Time;
-
 public class Player {
 
+    private static int idCounter = 1;
+    
     private int	   id;
     private String name;
     private String position;
-    private Time   birthdate;
+    private String birthdate;
     private String nation;
     private String picture;
     private Team   team;
 
     public Player() {
-
+	this.id = idCounter++;
     }
 
     public int getId() {
 	return id;
-    }
-
-    public void setId(int id) {
-	this.id = id;
     }
 
     public String getName() {
@@ -40,11 +36,11 @@ public class Player {
 	this.position = position;
     }
 
-    public Time getBirthdate() {
+    public String getBirthdate() {
 	return birthdate;
     }
 
-    public void setBirthdate(Time birthdate) {
+    public void setBirthdate(String birthdate) {
 	this.birthdate = birthdate;
     }
 

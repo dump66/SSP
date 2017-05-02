@@ -1,6 +1,8 @@
 package de.hofuniversity.ssp.data;
 
 public class Stadium {
+    
+    private static int idCounter = 1;
 
     private int	   id;
     private String name;
@@ -10,15 +12,11 @@ public class Stadium {
     private int	   capacity;
 
     public Stadium() {
-
+	this.id = idCounter++;
     }
 
     public int getId() {
 	return id;
-    }
-
-    public void setId(int id) {
-	this.id = id;
     }
 
     public String getName() {

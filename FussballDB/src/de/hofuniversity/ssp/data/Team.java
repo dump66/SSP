@@ -1,12 +1,10 @@
 package de.hofuniversity.ssp.data;
 
-import java.sql.Time;
-
 public class Team {
 
     private int	    id;
     private String  name;
-    private Time    founding;
+    private String  founding;
     private String  coach;
     private String  president;
     private String  city;
@@ -33,11 +31,11 @@ public class Team {
 	this.name = name;
     }
 
-    public Time getFounding() {
+    public String getFounding() {
 	return founding;
     }
 
-    public void setFounding(Time founding) {
+    public void setFounding(String founding) {
 	this.founding = founding;
     }
 

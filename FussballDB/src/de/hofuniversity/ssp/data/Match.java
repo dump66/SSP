@@ -1,12 +1,10 @@
 package de.hofuniversity.ssp.data;
 
-import java.sql.Time;
-
 public class Match {
 
     private int	    id;
     private int	    season;
-    private Time    date;
+    private String  date;
     private int	    visitors;
     private String  referee;
     private Stadium stadium;
@@ -37,11 +35,11 @@ public class Match {
 	this.season = season;
     }
 
-    public Time getDate() {
+    public String getDate() {
 	return date;
     }
 
-    public void setDate(Time date) {
+    public void setDate(String date) {
 	this.date = date;
     }
 

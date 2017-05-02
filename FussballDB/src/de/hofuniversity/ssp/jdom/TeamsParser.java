@@ -15,13 +15,10 @@ import de.hofuniversity.ssp.data.Team;
 
 public class TeamsParser {
 
-    private Document	  doc;
-    private List<Team>	  teamList;
-    private List<Stadium> stadiumList;
-    private List<Player>  playerList;
-
-    private static int	  stadiumID = 1;
-    private static int	  playerID  = 1;
+    private Document		 doc;
+    private static List<Team>	 teamList;
+    private static List<Stadium> stadiumList;
+    private static List<Player>	 playerList;
 
     public TeamsParser(String filename) throws JDOMException, IOException {
 	doc = new SAXBuilder().build(filename);
@@ -36,7 +33,6 @@ public class TeamsParser {
 	for (Element e : teams) {
 	    Team currentTeam = new Team();
 	    Stadium s = new Stadium();
-	    s.setId(getStadiumID());
 	    s.setName(e.getChildText("stadion"));
 	    this.stadiumList.add(s);
 	    currentTeam.setStadium(s);
@@ -45,7 +41,6 @@ public class TeamsParser {
 	    currentTeam.setName(e.getChildText("teamName"));
 	    for (Element player : e.getChildren("player")) {
 		Player p = new Player();
-		p.setId(getPlayerID());
 		p.setName(player.getText());
 		p.setTeam(currentTeam);
 		this.playerList.add(p);
@@ -55,23 +50,16 @@ public class TeamsParser {
 
     }
 
-    public List<Team> getTeamList() {
+    public static List<Team> getTeamList() {
 	return teamList;
     }
 
-    public List<Stadium> getStadiumList() {
+    public static List<Stadium> getStadiumList() {
 	return stadiumList;
     }
 
-    public List<Player> getPlayerList() {
+    public static List<Player> getPlayerList() {
 	return playerList;
     }
 
-    private int getStadiumID() {
-	return this.stadiumID++;
-    }
-
-    private int getPlayerID() {
-	return this.playerID++;
-    }
 }
