@@ -1,14 +1,30 @@
 package de.hofuniversity.ssp.data;
 
-public class Stadium {
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity(name="stadion")
+public class Stadium implements Serializable{
     
     private static int idCounter = 1;
 
+    @Id
+    @GeneratedValue
+    @Column(name="i_id")
     private int	   id;
+    @Column(name="v_name")
     private String name;
+    @Column(name="v_gps")
     private String gps;
+    @Column(name="v_adresse")
     private String address;
+    @Column(name="v_bild")
     private String picture;
+    @Column(name="i_kapazitaet")
     private int	   capacity;
 
     public Stadium() {

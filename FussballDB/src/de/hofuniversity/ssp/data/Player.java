@@ -1,15 +1,37 @@
 package de.hofuniversity.ssp.data;
 
-public class Player {
+import java.io.Serializable;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity(name="spieler")
+public class Player implements Serializable{
 
     private static int idCounter = 1;
     
+    @Id
+    @GeneratedValue
+    @Column(name="i_id")
     private int	   id;
+    @Column(name="v_name")
     private String name;
+    @Column(name="v_position")
     private String position;
+    @Column(name="v_geburtsdatum")
     private String birthdate;
+    @Column(name="v_nation")
     private String nation;
+    @Column(name="v_bild")
     private String picture;
+    @ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+    @JoinColumn(name="fk_verein")
     private Team   team;
 
     public Player() {

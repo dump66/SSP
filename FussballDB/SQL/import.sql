@@ -1,6 +1,3 @@
-DROP database IF EXISTS fussballdb;
-CREATE database fussballdb;
-
 CREATE TABLE `fussballdb`.`verein` (
   `i_id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   `v_name` VARCHAR(200),

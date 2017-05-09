@@ -1,18 +1,47 @@
 package de.hofuniversity.ssp.data;
 
-public class Match {
+import java.io.Serializable;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity(name="spiel")
+public class Match implements Serializable{
+    
+    @Id
+    @GeneratedValue
+    @Column(name="i_id")
     private int	    id;
+    @Column(name="i_saison")
     private int	    season;
+    @Column(name="v_datum")
     private String  date;
+    @Column(name="i_zuschauer")
     private int	    visitors;
+    @Column(name="v_schiri")
     private String  referee;
+    @ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+    @JoinColumn(name="fk_stadion")
     private Stadium stadium;
+    @Column(name="v_endergebnis")
     private String  finalScore;
+    @Column(name="v_hzergebnis")
     private String  htScore;
+    @Column(name="i_punkteHeim")
     private int	    ptsHome;
+    @Column(name="i_punkteGast")
     private int	    ptsGuest;
+    @ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+    @JoinColumn(name="fk_heimVerein")
     private Team    homeTeam;
+    @ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+    @JoinColumn(name="fk_gastVerein")
     private Team    guestTeam;
 
     public Match() {
