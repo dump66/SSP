@@ -73,7 +73,7 @@ public class MatchParser {
 			match.setPtsGuest(3);
 		    }
 		} else if (result.getChildText("resultName").equalsIgnoreCase("Halbzeit")) {
-		    match.setHtScore(homeScore + ":" + guestScore);
+		    match.setHtScore(result.getChildText("pointsTeam1") + ":" + result.getChildText("pointsTeam2"));
 		}
 	    }
 
