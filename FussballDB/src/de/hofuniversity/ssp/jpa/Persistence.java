@@ -136,6 +136,13 @@ public class Persistence {
 	return res;
     }
     
+    public List<Player> getTeamPlayers(int teamID){
+	EntityManager m = factory.createEntityManager();
+	List<Player> res = m.createQuery("select s from spieler s where s.team = " + teamID, Player.class).getResultList();
+	m.close();
+	return res;
+    }
+    
     public void deleteTeam(Team t){
 	EntityManager m = factory.createEntityManager();
 	m.getTransaction().begin();

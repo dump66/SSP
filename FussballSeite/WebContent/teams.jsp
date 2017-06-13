@@ -11,9 +11,9 @@
 <body>
 	<f:view>
 		<h:form id="teamlist">
-			<h:dataTable value="#{teamsBean.teams}" var="team">
+			<h:dataTable value="#{teamsBean.teamPlayer}" var="player">
 				<h:column>
-					<h:outputText value="#{team.name}" />
+					<h:outputText value="#{player.name}" />
 				</h:column>
 			</h:dataTable>
 		</h:form>
